@@ -1,0 +1,45 @@
+# Ambientes virtuais (inclusive dentro de alfabetizacao_dashboard/)
+.venv/
+venv/
+env/
+.env/
+
+# Bytecode e caches Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Artefatos de empacotamento e cobertura
+build/
+dist/
+*.egg-info/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Configuracoes locais e segredos
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+**/.streamlit/secrets.toml
+
+# Saidas regeneradas pelos scripts; manter os CSVs de entrada
+/alfabetizacao_dashboard/dados/cache_fato.parquet
+/alfabetizacao_dashboard/dados/cache_municipios.parquet
+/alfabetizacao_dashboard/big_numbers.json
+
+# Arquivos temporarios, locks do LibreOffice e arquivos do sistema
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+.~lock.*#
+.DS_Store
+Thumbs.db
