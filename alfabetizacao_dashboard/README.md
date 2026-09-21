@@ -19,7 +19,7 @@ streamlit run app.py               # dashboard em http://localhost:8501
 |---|---|
 | `dados/` | os dois CSVs (fato do censo e diretório de municípios) |
 | `dados.py` | leitura, tratamento, junção e KPIs (só pandas, sem Streamlit) |
-| `app.py` | dashboard (KPIs, barras e rosca) |
+| `app.py` | dashboard (KPIs, barras, rosca, histograma, box plot e mapa) |
 | `explorar_dataset.py` | perfilamento das duas tabelas |
 | `preparar_dados.py` | confere arquivos e monta o cache |
 | `big_numbers.py` | calcula os big numbers e grava `big_numbers.json` |

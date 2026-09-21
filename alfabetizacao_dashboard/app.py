@@ -1,6 +1,7 @@
 """
 app.py — Dashboard "Alfabetização no Brasil e em Goiás" (Censo 2022 / IBGE)
 Aula 1: KPIs + gráficos de barras e de pizza.
+Aula 2: histograma, box plot e mapa (abas).
 
 Executar:   streamlit run app.py
 
@@ -13,8 +14,8 @@ Construção em sala (blocos numerados):
   BLOCO 1  filtros na barra lateral
   BLOCO 2  KPIs (st.metric) com comparação contra o Brasil
   BLOCO 3  gráficos de barras e de pizza (Plotly)
-  BLOCO 4  tabela de conferência
-  AULA 2   histograma, box plot e mapa  ->  ver comentários ao final
+  BLOCO 4  distribuição e mapa (aula 2): histograma, box plot e mapa em abas
+  BLOCO 5  tabela de conferência
 """
 import plotly.express as px
 import streamlit as st
@@ -184,16 +185,58 @@ linha3_b.plotly_chart(barras(top_taxa, "taxa_analfabetismo", "rotulo",
                              horizontal=True, cor=CORAL))
 
 # ----------------------------------------------------------------------------
-# BLOCO 4 — conferência
+# BLOCO 4 — distribuição e mapa (aula 2), sobre a tabela municipal
 # ----------------------------------------------------------------------------
-with st.expander("Ver tabela municipal (base dos rankings e do mapa da aula 2)"):
-    st.dataframe(tm_area.drop(columns="rotulo").sort_values("nao_alfabetizadas", ascending=False))
+st.divider()
+st.markdown("#### Distribuição das taxas municipais e mapa")
+
+tm_area_min = tm_area[tm_area["populacao"] >= min_pop]      # mesmo corte de população dos rankings
+tm_min = tm[tm["populacao"] >= min_pop]
+corte = f"15+ ≥ {dados.formatar_int(min_pop)}"
+
+aba_hist, aba_box, aba_mapa = st.tabs(["Distribuição", "Por região", "Mapa"])
+
+# 4.1 HISTOGRAMA — como as taxas se distribuem entre os municípios do recorte
+with aba_hist:
+    if tm_area_min.empty:
+        st.info("Nenhum município atinge a população mínima escolhida.")
+    else:
+        fig = px.histogram(tm_area_min, x="taxa_analfabetismo", nbins=30, color_discrete_sequence=[VERDE])
+        fig.update_xaxes(title="Taxa de analfabetismo (%)")
+        fig.update_yaxes(title="Nº de municípios")
+        st.plotly_chart(estilo(fig, f"Distribuição da taxa de analfabetismo — {uf_nome}, {corte}"))
+        st.caption(f"{dados.formatar_int(len(tm_area_min))} municípios · mediana "
+                   f"{dados.formatar_pct(tm_area_min['taxa_analfabetismo'].median())}")
+
+# 4.2 BOX PLOT — comparar a distribuição entre regiões (sempre o Brasil todo)
+with aba_box:
+    if tm_min.empty:
+        st.info("Nenhum município atinge a população mínima escolhida.")
+    else:
+        fig = px.box(tm_min, x="regiao", y="taxa_analfabetismo", color_discrete_sequence=[VERDE],
+                     hover_name="municipio")
+        fig.update_xaxes(title=None)
+        fig.update_yaxes(title="Taxa de analfabetismo (%)")
+        st.plotly_chart(estilo(fig, f"Taxa de analfabetismo municipal por região — Brasil, {corte}"))
+
+# 4.3 MAPA — bolha = população, cor = taxa (centroides do diretório de municípios)
+with aba_mapa:
+    mapa = tm_area.dropna(subset=["lat", "lon", "taxa_analfabetismo"])
+    if mapa.empty:
+        st.info("Sem coordenadas para o recorte escolhido.")
+    else:
+        fig = px.scatter_map(mapa, lat="lat", lon="lon", size="populacao", size_max=25,
+                             color="taxa_analfabetismo", color_continuous_scale="YlOrRd",
+                             hover_name="municipio",
+                             hover_data={"lat": False, "lon": False, "populacao": ":,.0f",
+                                         "nao_alfabetizadas": ":,.0f", "taxa_analfabetismo": ":.1f"},
+                             center={"lat": mapa["lat"].mean(), "lon": mapa["lon"].mean()},
+                             zoom=3.5 if uf_nome == "Brasil" else 5.5, map_style="carto-positron")
+        fig.update_layout(coloraxis_colorbar_title="Analfabetismo (%)")
+        st.plotly_chart(estilo(fig, f"Municípios de {uf_nome}: tamanho = população 15+, cor = taxa de analfabetismo"))
 
 # ----------------------------------------------------------------------------
-# AULA 2 (roteiro) — acrescentar abaixo, usando a tabela municipal `tm_area`:
-#   px.histogram(tm_area, x="taxa_analfabetismo", nbins=30)          -> distribuição das taxas municipais
-#   px.box(tm, x="regiao", y="taxa_analfabetismo")                   -> comparar distribuições por região
-#   px.scatter_map(tm_area, lat="lat", lon="lon", size="populacao",
-#                  color="taxa_analfabetismo", hover_name="municipio",
-#                  zoom=5, map_style="carto-positron")               -> mapa (centroides já estão no diretório)
+# BLOCO 5 — conferência
 # ----------------------------------------------------------------------------
+with st.expander("Ver tabela municipal (base dos rankings, dos gráficos de distribuição e do mapa)"):
+    st.dataframe(tm_area.drop(columns="rotulo").sort_values("nao_alfabetizadas", ascending=False))
