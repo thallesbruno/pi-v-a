@@ -1,7 +1,7 @@
 """
 app.py — Dashboard "Alfabetização no Brasil e em Goiás" (Censo 2022 / IBGE)
 Aula 1: KPIs + gráficos de barras e de pizza.
-Aula 2: histograma, box plot e mapa (abas).
+Aula 2: histograma, box plot e mapa (seletor de visão).
 
 Executar:   streamlit run app.py
 
@@ -14,17 +14,13 @@ Construção em sala (blocos numerados):
   BLOCO 1  filtros na barra lateral
   BLOCO 2  KPIs (st.metric) com comparação contra o Brasil
   BLOCO 3  gráficos de barras e de pizza (Plotly)
-  BLOCO 4  distribuição e mapa (aula 2): histograma, box plot e mapa em abas
+  BLOCO 4  distribuição e mapa (aula 2): histograma, box plot e mapa, escolhidos num seletor
   BLOCO 5  tabela de conferência
 """
-import plotly.express as px
 import streamlit as st
 
 import dados
-
-VERDE, OURO, CORAL, ESCURO = "#1F7A4D", "#F2B705", "#D1495B", "#0B3D2E"
-COR_STATUS = {dados.ALFABETIZADAS: VERDE, dados.NAO_ALFABETIZADAS: CORAL}
-COR_SEXO = {"Homens": ESCURO, "Mulheres": OURO}
+import graficos as g
 
 # ----------------------------------------------------------------------------
 # BLOCO 0 — configuração e carga
@@ -38,11 +34,12 @@ def carregar_tudo():
     dim = dados.carregar_municipios()
     tm = dados.tabela_municipal(df, dim)            # 1 linha por município (ranking e mapa)
     kpis_brasil = dados.kpis(df)
-    return df, tm, kpis_brasil
+    contornos = dados.carregar_contornos_uf()       # limites dos estados (None se o arquivo não existir)
+    return df, tm, kpis_brasil, contornos
 
 
 try:
-    df, tm, k_brasil = carregar_tudo()
+    df, tm, k_brasil, contornos = carregar_tudo()
 except (FileNotFoundError, ValueError) as erro:
     st.error(str(erro))
     st.stop()
@@ -120,51 +117,43 @@ st.divider()
 
 
 # ----------------------------------------------------------------------------
-# BLOCO 3 — gráficos
+# BLOCO 3 — gráficos (as figuras vivem em graficos.py; aqui só a montagem da página)
 # ----------------------------------------------------------------------------
-def estilo(fig, titulo, legenda=False):
-    fig.update_layout(title_text=titulo, showlegend=legenda, margin=dict(l=0, r=0, t=50, b=0), title_font_size=16)
-    return fig
-
-
-def barras(dados_df, x, y, titulo, horizontal=False, cor=VERDE, fmt=".1f"):
-    fig = px.bar(dados_df, x=x, y=y, orientation="h" if horizontal else "v", text_auto=fmt,
-                 color_discrete_sequence=[cor])
-    if horizontal:
-        fig.update_yaxes(autorange="reversed", title=None)
-        fig.update_xaxes(title=None)
-    else:
-        fig.update_xaxes(title=None)
-        fig.update_yaxes(title=None)
-    return estilo(fig, titulo)
+def cartao(onde, titulo, legenda=None):
+    """Cartão com borda (st.container) + título + explicação; a borda e o texto seguem o tema do Streamlit."""
+    caixa = onde.container(border=True)
+    caixa.markdown(f"**{titulo}**")
+    if legenda:
+        caixa.caption(legenda)
+    return caixa
 
 
 linha1_a, linha1_b = st.columns([3, 2])
 
 # 3.1 BARRAS — taxa por faixa etária (categoria ORDINAL: mantém a ordem natural)
 por_idade = dados.por_dimensao(f, "grupo_idade")
-linha1_a.plotly_chart(barras(por_idade, "grupo_idade", "taxa_analfabetismo",
-                             "Taxa de analfabetismo por faixa etária (%)"))
+cartao(linha1_a, "Analfabetismo por faixa etária",
+       "% de pessoas que não sabem ler e escrever em cada faixa. A mais alta em destaque.").plotly_chart(
+    g.barras_taxa_por_idade(por_idade), config=g.CONFIG)
 
 # 3.2 PIZZA (rosca) — parte-todo com 2 fatias
 comp = dados.composicao_alfabetizacao(f)
-fig = px.pie(comp, names="alfabetizacao", values="populacao", hole=0.5, color="alfabetizacao",
-             color_discrete_map=COR_STATUS)
-fig.update_traces(textinfo="percent+label")
-linha1_b.plotly_chart(estilo(fig, "Alfabetizadas × não alfabetizadas"))
+cartao(linha1_b, "Alfabetizadas × não alfabetizadas",
+       "Pessoas de 15 anos ou mais no recorte.").plotly_chart(g.rosca_alfabetizacao(comp), config=g.CONFIG)
 
 linha2_a, linha2_b = st.columns([3, 2])
 
 # 3.3 BARRAS HORIZONTAIS — taxa por cor/raça (ordenadas)
-por_cor = dados.por_dimensao(f, "cor_raca").sort_values("taxa_analfabetismo", ascending=False)
-linha2_a.plotly_chart(barras(por_cor, "taxa_analfabetismo", "cor_raca",
-                             "Taxa de analfabetismo por cor ou raça (%)", horizontal=True))
+por_cor = dados.por_dimensao(f, "cor_raca")
+cartao(linha2_a, "Analfabetismo por cor ou raça",
+       "% de não alfabetizados dentro de cada grupo. A mais alta em destaque.").plotly_chart(
+    g.barras_taxa_por_cor(por_cor), config=g.CONFIG)
 
 # 3.4 PIZZA (rosca) — quem são os não alfabetizados, por sexo
 por_sexo = dados.nao_alfabetizadas_por(f, "sexo")
-fig = px.pie(por_sexo, names="sexo", values="nao_alfabetizadas", hole=0.5, color="sexo", color_discrete_map=COR_SEXO)
-fig.update_traces(textinfo="percent+label")
-linha2_b.plotly_chart(estilo(fig, "Não alfabetizados por sexo"))
+cartao(linha2_b, "Não alfabetizados por sexo",
+       "Total de não alfabetizados, por sexo.").plotly_chart(
+    g.rosca_sexo(por_sexo), config=g.CONFIG)
 
 # 3.5 e 3.6 RANKINGS — volume x taxa (o contraste é o ponto didático)
 st.markdown("#### Volume × taxa: onde estão as pessoas e onde está o problema proporcional")
@@ -176,64 +165,70 @@ tm_area = tm_area.assign(rotulo=tm_area["municipio"].astype(str) +
 linha3_a, linha3_b = st.columns(2)
 
 top_qtd = tm_area.nlargest(10, "nao_alfabetizadas")
-linha3_a.plotly_chart(barras(top_qtd, "nao_alfabetizadas", "rotulo",
-                             "Top 10 municípios — nº de não alfabetizados", horizontal=True, fmt=",.0f"))
+cartao(linha3_a, "Top 10 municípios em número de não alfabetizados",
+       "Volume: onde há mais pessoas para atender.").plotly_chart(g.ranking_volume(top_qtd), config=g.CONFIG)
 
 top_taxa = tm_area[tm_area["populacao"] >= min_pop].nlargest(10, "taxa_analfabetismo")
-linha3_b.plotly_chart(barras(top_taxa, "taxa_analfabetismo", "rotulo",
-                             f"Top 10 municípios — taxa de analfabetismo (%), 15+ ≥ {dados.formatar_int(min_pop)}",
-                             horizontal=True, cor=CORAL))
+cartao(linha3_b, "Top 10 municípios em taxa de analfabetismo",
+       f"Proporção: onde o problema pesa mais. Só municípios com 15+ ≥ {dados.formatar_int(min_pop)}.").plotly_chart(
+    g.ranking_taxa(top_taxa), config=g.CONFIG)
 
 # ----------------------------------------------------------------------------
 # BLOCO 4 — distribuição e mapa (aula 2), sobre a tabela municipal
 # ----------------------------------------------------------------------------
-st.divider()
 st.markdown("#### Distribuição das taxas municipais e mapa")
 
 tm_area_min = tm_area[tm_area["populacao"] >= min_pop]      # mesmo corte de população dos rankings
 tm_min = tm[tm["populacao"] >= min_pop]
-corte = f"15+ ≥ {dados.formatar_int(min_pop)}"
+corte = f"com 15+ ≥ {dados.formatar_int(min_pop)}"
 
-aba_hist, aba_box, aba_mapa = st.tabs(["Distribuição", "Por região", "Mapa"])
+# Seletor em vez de st.tabs: numa aba oculta o mapa nasce com o tamanho errado (só uma fatia aparece).
+# Com o seletor, só a visão escolhida é montada, já visível.
+vista = st.segmented_control("Visão", ["Distribuição", "Por região", "Mapa"], default="Distribuição",
+                             key="vista", label_visibility="collapsed") or "Distribuição"
 
 # 4.1 HISTOGRAMA — como as taxas se distribuem entre os municípios do recorte
-with aba_hist:
+if vista == "Distribuição":
     if tm_area_min.empty:
         st.info("Nenhum município atinge a população mínima escolhida.")
     else:
-        fig = px.histogram(tm_area_min, x="taxa_analfabetismo", nbins=30, color_discrete_sequence=[VERDE])
-        fig.update_xaxes(title="Taxa de analfabetismo (%)")
-        fig.update_yaxes(title="Nº de municípios")
-        st.plotly_chart(estilo(fig, f"Distribuição da taxa de analfabetismo — {uf_nome}, {corte}"))
-        st.caption(f"{dados.formatar_int(len(tm_area_min))} municípios · mediana "
-                   f"{dados.formatar_pct(tm_area_min['taxa_analfabetismo'].median())}")
+        cartao(st, f"Como variam as taxas entre os municípios — {uf_nome}",
+               f"{dados.formatar_int(len(tm_area_min))} municípios {corte}. Cada barra conta municípios numa faixa de taxa; "
+               "a linha marca a mediana.").plotly_chart(
+            g.histograma(tm_area_min["taxa_analfabetismo"]), config=g.CONFIG)
 
 # 4.2 BOX PLOT — comparar a distribuição entre regiões (sempre o Brasil todo)
-with aba_box:
+if vista == "Por região":
     if tm_min.empty:
         st.info("Nenhum município atinge a população mínima escolhida.")
     else:
-        fig = px.box(tm_min, x="regiao", y="taxa_analfabetismo", color_discrete_sequence=[VERDE],
-                     hover_name="municipio")
-        fig.update_xaxes(title=None)
-        fig.update_yaxes(title="Taxa de analfabetismo (%)")
-        st.plotly_chart(estilo(fig, f"Taxa de analfabetismo municipal por região — Brasil, {corte}"))
+        regiao_destaque = None if uf_nome == "Brasil" else tm_area["regiao"].iloc[0]
+        cartao(st, "Taxa de analfabetismo dos municípios, por região do Brasil",
+               f"Municípios {corte}. A caixa cobre a metade central dos municípios, o traço é a mediana e os pontos são "
+               "casos extremos." + (f" Em destaque: região de {uf_nome}." if regiao_destaque else "")).plotly_chart(
+            g.box_regioes(tm_min, regiao_destaque), config=g.CONFIG)
 
-# 4.3 MAPA — bolha = população, cor = taxa (centroides do diretório de municípios)
-with aba_mapa:
-    mapa = tm_area.dropna(subset=["lat", "lon", "taxa_analfabetismo"])
-    if mapa.empty:
+# 4.3 MAPA — bolha = população, cor = taxa (centroides do diretório de municípios) sobre os limites dos estados
+if vista == "Mapa":
+    if tm_area.dropna(subset=["lat", "lon", "taxa_analfabetismo"]).empty:
         st.info("Sem coordenadas para o recorte escolhido.")
     else:
-        fig = px.scatter_map(mapa, lat="lat", lon="lon", size="populacao", size_max=25,
-                             color="taxa_analfabetismo", color_continuous_scale="YlOrRd",
-                             hover_name="municipio",
-                             hover_data={"lat": False, "lon": False, "populacao": ":,.0f",
-                                         "nao_alfabetizadas": ":,.0f", "taxa_analfabetismo": ":.1f"},
-                             center={"lat": mapa["lat"].mean(), "lon": mapa["lon"].mean()},
-                             zoom=3.5 if uf_nome == "Brasil" else 5.5, map_style="carto-positron")
-        fig.update_layout(coloraxis_colorbar_title="Analfabetismo (%)")
-        st.plotly_chart(estilo(fig, f"Municípios de {uf_nome}: tamanho = população 15+, cor = taxa de analfabetismo"))
+        uf_sigla = None if uf_nome == "Brasil" else tm_area["sigla_uf"].iloc[0]
+        caixa = cartao(st, f"Mapa dos municípios — {uf_nome}",
+                       "Cada bolha é um município, na posição do seu centro (norte para cima): o tamanho cresce com a "
+                       "população de 15+ e a cor mostra a taxa de analfabetismo. Roda do mouse para aproximar. "
+                       "Limites estaduais: IBGE.")
+        if contornos is None:
+            caixa.warning("Contorno dos estados não encontrado: rode `python preparar_dados.py` para baixá-lo. "
+                          "Enquanto isso, o mapa mostra só as bolhas.")
+            caixa.plotly_chart(g.mapa(tm_area), config=g.CONFIG_MAPA)
+        elif uf_sigla is None:
+            caixa.plotly_chart(g.mapa(tm_area, contornos), config=g.CONFIG_MAPA)
+        else:
+            col_mapa, col_localizador = caixa.columns([4, 1])
+            col_mapa.plotly_chart(g.mapa(tm_area, contornos, uf_sigla), config=g.CONFIG_MAPA)
+            col_localizador.caption("Localização no Brasil")
+            col_localizador.plotly_chart(g.mapa_localizador(contornos, uf_sigla), config=g.CONFIG_LOCALIZADOR)
 
 # ----------------------------------------------------------------------------
 # BLOCO 5 — conferência

@@ -1,4 +1,4 @@
-streamlit>=1.35
+streamlit>=1.50  # st.plotly_chart(config=...); testado com 1.64
 pandas>=2.1
-plotly>=5.24     # 5.24+ para px.scatter_map (mapa da aula 2)
+plotly>=6.0      # px.scatter_map (mapa da aula 2) e cantos arredondados nas barras
 pyarrow>=15.0    # cache em Parquet (opcional, recomendado)
