@@ -36,6 +36,16 @@ def main() -> int:
           f"{df['id_municipio'].nunique():,} municípios, {df['sigla_uf'].nunique()} UFs.")
     print("Cache gravado em dados/ (Parquet) — só ocorre se o pyarrow estiver instalado."
           if dados.PARQUET_FATO.exists() else "Sem pyarrow: rodando sem cache em Parquet (funciona, só é mais lento).")
+    if dados.GEOJSON_UF.exists():
+        print(f"OK  {dados.GEOJSON_UF.name}  (contorno dos estados, para o mapa)")
+    else:
+        print(f"Baixando o contorno dos estados (IBGE) para {dados.GEOJSON_UF.name} ...")
+        try:
+            dados.baixar_contornos_uf()
+            print("OK  contorno dos estados baixado.")
+        except Exception as erro:                          # sem rede não é fatal: o mapa fica só com bolhas
+            print(f"AVISO: não foi possível baixar o contorno ({erro}). O mapa mostrará só as bolhas.")
+
     print("\nPróximo passo: python explorar_dataset.py")
     return 0
 

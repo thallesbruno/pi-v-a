@@ -17,11 +17,12 @@ streamlit run app.py               # dashboard em http://localhost:8501
 ## Arquivos
 | Arquivo | Função |
 |---|---|
-| `dados/` | os dois CSVs (fato do censo e diretório de municípios) |
-| `dados.py` | leitura, tratamento, junção e KPIs (só pandas, sem Streamlit) |
-| `app.py` | dashboard (KPIs, barras e rosca) |
+| `dados/` | os dois CSVs (fato do censo e diretório de municípios) e `br_uf_contornos.geojson` (limites dos estados, IBGE; opcional, sem ele o mapa mostra só as bolhas) |
+| `dados.py` | leitura, tratamento, junção, KPIs e contorno dos estados (só pandas, sem Streamlit) |
+| `app.py` | dashboard (KPIs, barras, rosca, histograma, box plot e mapa) |
+| `graficos.py` | figuras Plotly e paleta (só Plotly + pandas); cores válidas nos temas claro e escuro |
 | `explorar_dataset.py` | perfilamento das duas tabelas |
-| `preparar_dados.py` | confere arquivos e monta o cache |
+| `preparar_dados.py` | confere arquivos, baixa o contorno dos estados se faltar e monta o cache |
 | `big_numbers.py` | calcula os big numbers e grava `big_numbers.json` |
 
 ## Regra de ouro

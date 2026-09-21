@@ -21,6 +21,9 @@ taxa = soma(numerador) ÷ soma(denominador). NUNCA tire a média das linhas.
 """
 from __future__ import annotations
 
+import gzip
+import json
+import urllib.request
 from pathlib import Path
 
 import numpy as np
@@ -34,6 +37,10 @@ CSV_CENSO = PASTA / "br_ibge_censo_2022_alfabetizacao_grupo_idade_sexo_raca.csv"
 CSV_MUNICIPIO = PASTA / "br_bd_diretorios_brasil_municipio.csv"
 PARQUET_FATO = PASTA / "cache_fato.parquet"
 PARQUET_DIM = PASTA / "cache_municipios.parquet"
+# Contorno dos 27 estados (IBGE, malha estadual, qualidade intermediária). É opcional: sem ele o mapa fica só com bolhas.
+GEOJSON_UF = PASTA / "br_uf_contornos.geojson"
+URL_CONTORNOS_UF = ("https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR"
+                    "?intrarregiao=UF&formato=application/vnd.geo+json&qualidade=intermediaria")
 
 ALFABETIZADAS = "Alfabetizadas"
 NAO_ALFABETIZADAS = "Não alfabetizadas"
@@ -122,6 +129,33 @@ def carregar() -> pd.DataFrame:
     except Exception:
         pass
     return df
+
+
+def baixar_contornos_uf() -> Path:
+    """Baixa a malha estadual do IBGE (GeoJSON) para dados/. A API responde em gzip."""
+    pedido = urllib.request.Request(URL_CONTORNOS_UF, headers={"Accept-Encoding": "gzip"})
+    with urllib.request.urlopen(pedido, timeout=60) as resposta:
+        bruto = resposta.read()
+    if bruto[:2] == b"\x1f\x8b":
+        bruto = gzip.decompress(bruto)
+    n = len(json.loads(bruto)["features"])
+    if n != 27:
+        raise ValueError(f"A malha do IBGE veio com {n} estados (esperado: 27).")
+    GEOJSON_UF.write_bytes(bruto)
+    return GEOJSON_UF
+
+
+def carregar_contornos_uf() -> dict | None:
+    """GeoJSON dos estados com `properties.sigla_uf` (o IBGE só traz o código de 2 dígitos = início do
+    id_municipio). Devolve None se o arquivo não existir."""
+    if not GEOJSON_UF.exists():
+        return None
+    geojson = json.loads(GEOJSON_UF.read_text(encoding="utf-8"))
+    dim = carregar_municipios()
+    sigla = dict(zip(dim["id_municipio"].str[:2], dim["sigla_uf"]))
+    for feicao in geojson["features"]:
+        feicao["properties"]["sigla_uf"] = sigla[feicao["properties"]["codarea"]]
+    return geojson
 
 
 # ----------------------------------------------------------------------------
