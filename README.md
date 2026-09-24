@@ -1,10 +1,13 @@
-# Alfabetização no Brasil e em Goiás
+# Projeto Integrador V-A - Big Data e Inteligência Artificial
 
-Dashboard em Streamlit com dados de alfabetização do Censo 2022 (IBGE).
+Este repositório contém dois projetos diferentes, com objetivos e dados distintos:
 
-## Como executar
+- `alfabetizacao_dashboard/`: dashboard em Streamlit sobre alfabetização no Brasil e em Goiás, usando dados do Censo 2022 do IBGE.
+- `boas_praticas_visualizacao/`: projeto de estudo sobre boas práticas de visualização de dados, com exemplos, app em Streamlit e slides sobre PIB e população dos municípios.
 
-Com Python 3.10 ou superior instalado, execute a partir da raiz do projeto:
+## 1) Dashboard de alfabetização
+
+Entre na pasta `alfabetizacao_dashboard/` e siga os passos abaixo:
 
 ```bash
 cd alfabetizacao_dashboard
@@ -13,26 +16,67 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-No Windows (PowerShell), substitua a ativação por `.venv\Scripts\Activate.ps1`.
+No Windows, em PowerShell, use:
 
-Confira se a pasta `alfabetizacao_dashboard/dados/` contém os arquivos:
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Verifique se a pasta `dados/` contém os arquivos:
 
 - `br_ibge_censo_2022_alfabetizacao_grupo_idade_sexo_raca.csv`
 - `br_bd_diretorios_brasil_municipio.csv`
 
-No mesmo terminal, prepare os dados e inicie o dashboard:
+Depois rode:
 
 ```bash
 python preparar_dados.py
 python -m streamlit run app.py
 ```
 
-Acesse **http://localhost:8501**. Para encerrar, pressione `Ctrl+C`.
+O dashboard abre em `http://localhost:8501`.
 
-Para conferir os dados antes de abrir o dashboard, execute `python explorar_dataset.py`
-na pasta `alfabetizacao_dashboard/`, com o ambiente virtual ativo. O script mostra
-no terminal os tipos das colunas, valores nulos, correspondência entre municípios,
-comparação dos indicadores com referências do IBGE e um resumo de Goiás.
+Para inspecionar os dados antes de abrir o app, use:
 
-Opcional: execute `python big_numbers.py` para gerar o resumo de indicadores em
-`big_numbers.json`.
+```bash
+python explorar_dataset.py
+```
+
+Opcionalmente, rode:
+
+```bash
+python big_numbers.py
+```
+
+Isso gera um resumo em `big_numbers.json`.
+
+## 2) Projeto de boas práticas de visualização
+
+Entre na pasta `boas_praticas_visualizacao/` e siga os passos abaixo:
+
+```bash
+cd boas_praticas_visualizacao
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+```
+
+No Windows, em PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Para iniciar o app:
+
+```bash
+streamlit run app.py
+```
+
+O app fica em `http://localhost:8501`.
+
+Se quiser gerar os slides, veja o README interno da pasta `boas_praticas_visualizacao/`.
+
+## Observação
+
+Os dois projetos são independentes. Cada uma das pastas tem seu próprio README, requisitos e dados. O README principal serve só para orientar a entrada no repositório.
