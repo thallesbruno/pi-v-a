@@ -1,0 +1,595 @@
+cod_uf,uf,regiao,ano,pib_mil_reais
+11,Rondônia,Norte,2002,7467630
+11,Rondônia,Norte,2003,9425010
+11,Rondônia,Norte,2004,11004641
+11,Rondônia,Norte,2005,12511821
+11,Rondônia,Norte,2006,13054713
+11,Rondônia,Norte,2007,14438376
+11,Rondônia,Norte,2008,17285542
+11,Rondônia,Norte,2009,19725010
+11,Rondônia,Norte,2010,23907887
+11,Rondônia,Norte,2011,27574714
+11,Rondônia,Norte,2012,30112720
+11,Rondônia,Norte,2013,31121413
+11,Rondônia,Norte,2014,34030982
+11,Rondônia,Norte,2015,36563333
+11,Rondônia,Norte,2016,39460359
+11,Rondônia,Norte,2017,43516147
+11,Rondônia,Norte,2018,44913978
+11,Rondônia,Norte,2019,47091336
+11,Rondônia,Norte,2020,51598741
+11,Rondônia,Norte,2021,58170096
+11,Rondônia,Norte,2022,66795454
+11,Rondônia,Norte,2023,76456179
+12,Acre,Norte,2002,2971301
+12,Acre,Norte,2003,3377234
+12,Acre,Norte,2004,3784003
+12,Acre,Norte,2005,4300581
+12,Acre,Norte,2006,4661807
+12,Acre,Norte,2007,5458172
+12,Acre,Norte,2008,6410255
+12,Acre,Norte,2009,7407821
+12,Acre,Norte,2010,8342356
+12,Acre,Norte,2011,8949434
+12,Acre,Norte,2012,10137925
+12,Acre,Norte,2013,11473930
+12,Acre,Norte,2014,13458698
+12,Acre,Norte,2015,13622802
+12,Acre,Norte,2016,13754240
+12,Acre,Norte,2017,14272941
+12,Acre,Norte,2018,15331123
+12,Acre,Norte,2019,15630017
+12,Acre,Norte,2020,16476371
+12,Acre,Norte,2021,21374440
+12,Acre,Norte,2022,23676136
+12,Acre,Norte,2023,26291321
+13,Amazonas,Norte,2002,22093338
+13,Amazonas,Norte,2003,25862134
+13,Amazonas,Norte,2004,31090696
+13,Amazonas,Norte,2005,33980877
+13,Amazonas,Norte,2006,39933213
+13,Amazonas,Norte,2007,43479773
+13,Amazonas,Norte,2008,48115265
+13,Amazonas,Norte,2009,50559840
+13,Amazonas,Norte,2010,60877123
+13,Amazonas,Norte,2011,70734401
+13,Amazonas,Norte,2012,72242701
+13,Amazonas,Norte,2013,83051233
+13,Amazonas,Norte,2014,86668644
+13,Amazonas,Norte,2015,86568184
+13,Amazonas,Norte,2016,89039782
+13,Amazonas,Norte,2017,93240191
+13,Amazonas,Norte,2018,100109235
+13,Amazonas,Norte,2019,108181091
+13,Amazonas,Norte,2020,116019139
+13,Amazonas,Norte,2021,131531038
+13,Amazonas,Norte,2022,145140465
+13,Amazonas,Norte,2023,161794976
+14,Roraima,Norte,2002,2392033
+14,Roraima,Norte,2003,2594081
+14,Roraima,Norte,2004,2822757
+14,Roraima,Norte,2005,3193430
+14,Roraima,Norte,2006,3802452
+14,Roraima,Norte,2007,4203302
+14,Roraima,Norte,2008,4841862
+14,Roraima,Norte,2009,5671975
+14,Roraima,Norte,2010,6639150
+14,Roraima,Norte,2011,7303719
+14,Roraima,Norte,2012,7711467
+14,Roraima,Norte,2013,9010725
+14,Roraima,Norte,2014,9744122
+14,Roraima,Norte,2015,10242905
+14,Roraima,Norte,2016,11013237
+14,Roraima,Norte,2017,12104709
+14,Roraima,Norte,2018,13369988
+14,Roraima,Norte,2019,14292227
+14,Roraima,Norte,2020,16024276
+14,Roraima,Norte,2021,18202579
+14,Roraima,Norte,2022,21095342
+14,Roraima,Norte,2023,25124805
+15,Pará,Norte,2002,26482159
+15,Pará,Norte,2003,30270152
+15,Pará,Norte,2004,37272726
+15,Pará,Norte,2005,40522893
+15,Pará,Norte,2006,45983027
+15,Pará,Norte,2007,51846876
+15,Pará,Norte,2008,60956978
+15,Pará,Norte,2009,61665096
+15,Pará,Norte,2010,82684518
+15,Pará,Norte,2011,98710736
+15,Pará,Norte,2012,107080881
+15,Pará,Norte,2013,121224847
+15,Pará,Norte,2014,124584945
+15,Pará,Norte,2015,130899505
+15,Pará,Norte,2016,138107514
+15,Pará,Norte,2017,155232404
+15,Pará,Norte,2018,161349602
+15,Pará,Norte,2019,178376984
+15,Pará,Norte,2020,215935604
+15,Pará,Norte,2021,262904979
+15,Pará,Norte,2022,236141874
+15,Pará,Norte,2023,254546511
+16,Amapá,Norte,2002,3173343
+16,Amapá,Norte,2003,3413195
+16,Amapá,Norte,2004,3824740
+16,Amapá,Norte,2005,4306410
+16,Amapá,Norte,2006,5280822
+16,Amapá,Norte,2007,6012523
+16,Amapá,Norte,2008,6950413
+16,Amapá,Norte,2009,7490656
+16,Amapá,Norte,2010,8237795
+16,Amapá,Norte,2011,9409228
+16,Amapá,Norte,2012,11130868
+16,Amapá,Norte,2013,12763486
+16,Amapá,Norte,2014,13400284
+16,Amapá,Norte,2015,13861293
+16,Amapá,Norte,2016,14342135
+16,Amapá,Norte,2017,15481908
+16,Amapá,Norte,2018,16795207
+16,Amapá,Norte,2019,17496661
+16,Amapá,Norte,2020,18469115
+16,Amapá,Norte,2021,20099851
+16,Amapá,Norte,2022,23614291
+16,Amapá,Norte,2023,28020120
+17,Tocantins,Norte,2002,5322563
+17,Tocantins,Norte,2003,6612339
+17,Tocantins,Norte,2004,7251580
+17,Tocantins,Norte,2005,7707340
+17,Tocantins,Norte,2006,8655613
+17,Tocantins,Norte,2007,10192844
+17,Tocantins,Norte,2008,12116393
+17,Tocantins,Norte,2009,13689804
+17,Tocantins,Norte,2010,16404816
+17,Tocantins,Norte,2011,18345688
+17,Tocantins,Norte,2012,20684430
+17,Tocantins,Norte,2013,23796656
+17,Tocantins,Norte,2014,26189323
+17,Tocantins,Norte,2015,28930291
+17,Tocantins,Norte,2016,31584816
+17,Tocantins,Norte,2017,34108132
+17,Tocantins,Norte,2018,35666183
+17,Tocantins,Norte,2019,39355941
+17,Tocantins,Norte,2020,43649803
+17,Tocantins,Norte,2021,51780764
+17,Tocantins,Norte,2022,58208795
+17,Tocantins,Norte,2023,64317699
+21,Maranhão,Nordeste,2002,15924003
+21,Maranhão,Nordeste,2003,19502900
+21,Maranhão,Nordeste,2004,22127132
+21,Maranhão,Nordeste,2005,25104209
+21,Maranhão,Nordeste,2006,29710643
+21,Maranhão,Nordeste,2007,30730866
+21,Maranhão,Nordeste,2008,37932402
+21,Maranhão,Nordeste,2009,40994571
+21,Maranhão,Nordeste,2010,46309633
+21,Maranhão,Nordeste,2011,52143535
+21,Maranhão,Nordeste,2012,60490109
+21,Maranhão,Nordeste,2013,67694845
+21,Maranhão,Nordeste,2014,76842028
+21,Maranhão,Nordeste,2015,78475994
+21,Maranhão,Nordeste,2016,85310038
+21,Maranhão,Nordeste,2017,89542757
+21,Maranhão,Nordeste,2018,98179496
+21,Maranhão,Nordeste,2019,97339938
+21,Maranhão,Nordeste,2020,106915962
+21,Maranhão,Nordeste,2021,124980720
+21,Maranhão,Nordeste,2022,139789146
+21,Maranhão,Nordeste,2023,149227195
+22,Piauí,Nordeste,2002,7122635
+22,Piauí,Nordeste,2003,8414901
+22,Piauí,Nordeste,2004,9406461
+22,Piauí,Nordeste,2005,10711834
+22,Piauí,Nordeste,2006,13360478
+22,Piauí,Nordeste,2007,13736085
+22,Piauí,Nordeste,2008,16203340
+22,Piauí,Nordeste,2009,18946449
+22,Piauí,Nordeste,2010,22269149
+22,Piauí,Nordeste,2011,25941362
+22,Piauí,Nordeste,2012,28637685
+22,Piauí,Nordeste,2013,31283593
+22,Piauí,Nordeste,2014,37723497
+22,Piauí,Nordeste,2015,39149686
+22,Piauí,Nordeste,2016,41416937
+22,Piauí,Nordeste,2017,45365541
+22,Piauí,Nordeste,2018,50378418
+22,Piauí,Nordeste,2019,52780785
+22,Piauí,Nordeste,2020,56391257
+22,Piauí,Nordeste,2021,64028303
+22,Piauí,Nordeste,2022,72834504
+22,Piauí,Nordeste,2023,80916856
+23,Ceará,Nordeste,2002,28718840
+23,Ceará,Nordeste,2003,32687418
+23,Ceará,Nordeste,2004,36890816
+23,Ceará,Nordeste,2005,41059459
+23,Ceará,Nordeste,2006,46500321
+23,Ceará,Nordeste,2007,50818749
+23,Ceará,Nordeste,2008,60415574
+23,Ceará,Nordeste,2009,67199958
+23,Ceará,Nordeste,2010,79336299
+23,Ceará,Nordeste,2011,89695828
+23,Ceará,Nordeste,2012,96973753
+23,Ceará,Nordeste,2013,109036556
+23,Ceará,Nordeste,2014,126054472
+23,Ceará,Nordeste,2015,130629849
+23,Ceará,Nordeste,2016,138422521
+23,Ceará,Nordeste,2017,147921534
+23,Ceará,Nordeste,2018,155903825
+23,Ceará,Nordeste,2019,163575327
+23,Ceará,Nordeste,2020,166914536
+23,Ceará,Nordeste,2021,194884802
+23,Ceará,Nordeste,2022,213600674
+23,Ceará,Nordeste,2023,232239257
+24,Rio Grande do Norte,Nordeste,2002,13566803
+24,Rio Grande do Norte,Nordeste,2003,14865441
+24,Rio Grande do Norte,Nordeste,2004,17252398
+24,Rio Grande do Norte,Nordeste,2005,19966918
+24,Rio Grande do Norte,Nordeste,2006,22890124
+24,Rio Grande do Norte,Nordeste,2007,26318259
+24,Rio Grande do Norte,Nordeste,2008,28898860
+24,Rio Grande do Norte,Nordeste,2009,30941054
+24,Rio Grande do Norte,Nordeste,2010,36184502
+24,Rio Grande do Norte,Nordeste,2011,40992925
+24,Rio Grande do Norte,Nordeste,2012,46412208
+24,Rio Grande do Norte,Nordeste,2013,51518457
+24,Rio Grande do Norte,Nordeste,2014,54022584
+24,Rio Grande do Norte,Nordeste,2015,57250867
+24,Rio Grande do Norte,Nordeste,2016,59677389
+24,Rio Grande do Norte,Nordeste,2017,64305995
+24,Rio Grande do Norte,Nordeste,2018,66969562
+24,Rio Grande do Norte,Nordeste,2019,71336780
+24,Rio Grande do Norte,Nordeste,2020,71577107
+24,Rio Grande do Norte,Nordeste,2021,80180733
+24,Rio Grande do Norte,Nordeste,2022,93819291
+24,Rio Grande do Norte,Nordeste,2023,101740275
+25,Paraíba,Nordeste,2002,12747021
+25,Paraíba,Nordeste,2003,14737920
+25,Paraíba,Nordeste,2004,15757832
+25,Paraíba,Nordeste,2005,17557226
+25,Paraíba,Nordeste,2006,20838016
+25,Paraíba,Nordeste,2007,22909811
+25,Paraíba,Nordeste,2008,26889573
+25,Paraíba,Nordeste,2009,30230406
+25,Paraíba,Nordeste,2010,33522492
+25,Paraíba,Nordeste,2011,37109137
+25,Paraíba,Nordeste,2012,42488349
+25,Paraíba,Nordeste,2013,46377299
+25,Paraíba,Nordeste,2014,52936483
+25,Paraíba,Nordeste,2015,56141890
+25,Paraíba,Nordeste,2016,59104781
+25,Paraíba,Nordeste,2017,62396776
+25,Paraíba,Nordeste,2018,64373595
+25,Paraíba,Nordeste,2019,67986074
+25,Paraíba,Nordeste,2020,70292034
+25,Paraíba,Nordeste,2021,77470331
+25,Paraíba,Nordeste,2022,86094173
+25,Paraíba,Nordeste,2023,96963174
+26,Pernambuco,Nordeste,2002,36056032
+26,Pernambuco,Nordeste,2003,38815845
+26,Pernambuco,Nordeste,2004,44982684
+26,Pernambuco,Nordeste,2005,50240325
+26,Pernambuco,Nordeste,2006,55485293
+26,Pernambuco,Nordeste,2007,62459325
+26,Pernambuco,Nordeste,2008,70413939
+26,Pernambuco,Nordeste,2009,79760958
+26,Pernambuco,Nordeste,2010,97189760
+26,Pernambuco,Nordeste,2011,110161559
+26,Pernambuco,Nordeste,2012,127989043
+26,Pernambuco,Nordeste,2013,141150252
+26,Pernambuco,Nordeste,2014,155142648
+26,Pernambuco,Nordeste,2015,156963668
+26,Pernambuco,Nordeste,2016,167345031
+26,Pernambuco,Nordeste,2017,181609501
+26,Pernambuco,Nordeste,2018,186351975
+26,Pernambuco,Nordeste,2019,197853378
+26,Pernambuco,Nordeste,2020,193307317
+26,Pernambuco,Nordeste,2021,220813522
+26,Pernambuco,Nordeste,2022,245828017
+26,Pernambuco,Nordeste,2023,270474919
+27,Alagoas,Nordeste,2002,11536853
+27,Alagoas,Nordeste,2003,12624030
+27,Alagoas,Nordeste,2004,14044907
+27,Alagoas,Nordeste,2005,15484521
+27,Alagoas,Nordeste,2006,17395671
+27,Alagoas,Nordeste,2007,19871266
+27,Alagoas,Nordeste,2008,22262295
+27,Alagoas,Nordeste,2009,24182388
+27,Alagoas,Nordeste,2010,27133038
+27,Alagoas,Nordeste,2011,31657321
+27,Alagoas,Nordeste,2012,34650397
+27,Alagoas,Nordeste,2013,37282529
+27,Alagoas,Nordeste,2014,40974994
+27,Alagoas,Nordeste,2015,46367211
+27,Alagoas,Nordeste,2016,49468741
+27,Alagoas,Nordeste,2017,52851067
+27,Alagoas,Nordeste,2018,54413047
+27,Alagoas,Nordeste,2019,58963729
+27,Alagoas,Nordeste,2020,63202349
+27,Alagoas,Nordeste,2021,76265620
+27,Alagoas,Nordeste,2022,76065806
+27,Alagoas,Nordeste,2023,89688932
+28,Sergipe,Nordeste,2002,10332494
+28,Sergipe,Nordeste,2003,11749574
+28,Sergipe,Nordeste,2004,13336258
+28,Sergipe,Nordeste,2005,14430118
+28,Sergipe,Nordeste,2006,16419798
+28,Sergipe,Nordeste,2007,18218450
+28,Sergipe,Nordeste,2008,21418378
+28,Sergipe,Nordeste,2009,21707243
+28,Sergipe,Nordeste,2010,26404893
+28,Sergipe,Nordeste,2011,29108272
+28,Sergipe,Nordeste,2012,32853181
+28,Sergipe,Nordeste,2013,35335986
+28,Sergipe,Nordeste,2014,37472432
+28,Sergipe,Nordeste,2015,38556530
+28,Sergipe,Nordeste,2016,38877438
+28,Sergipe,Nordeste,2017,40711486
+28,Sergipe,Nordeste,2018,42017981
+28,Sergipe,Nordeste,2019,44689483
+28,Sergipe,Nordeste,2020,45409657
+28,Sergipe,Nordeste,2021,51861397
+28,Sergipe,Nordeste,2022,57372241
+28,Sergipe,Nordeste,2023,60816662
+29,Bahia,Nordeste,2002,58842976
+29,Bahia,Nordeste,2003,67174227
+29,Bahia,Nordeste,2004,77931725
+29,Bahia,Nordeste,2005,88291883
+29,Bahia,Nordeste,2006,95347802
+29,Bahia,Nordeste,2007,109329528
+29,Bahia,Nordeste,2008,121667455
+29,Bahia,Nordeste,2009,137942481
+29,Bahia,Nordeste,2010,154419547
+29,Bahia,Nordeste,2011,166602817
+29,Bahia,Nordeste,2012,182572530
+29,Bahia,Nordeste,2013,204844274
+29,Bahia,Nordeste,2014,223929966
+29,Bahia,Nordeste,2015,245043690
+29,Bahia,Nordeste,2016,258738970
+29,Bahia,Nordeste,2017,268724090
+29,Bahia,Nordeste,2018,286239541
+29,Bahia,Nordeste,2019,293240504
+29,Bahia,Nordeste,2020,305320813
+29,Bahia,Nordeste,2021,352617852
+29,Bahia,Nordeste,2022,402646606
+29,Bahia,Nordeste,2023,430987853
+31,Minas Gerais,Sudeste,2002,124071066
+31,Minas Gerais,Sudeste,2003,144189094
+31,Minas Gerais,Sudeste,2004,171870934
+31,Minas Gerais,Sudeste,2005,188364436
+31,Minas Gerais,Sudeste,2006,212659547
+31,Minas Gerais,Sudeste,2007,240355239
+31,Minas Gerais,Sudeste,2008,278607619
+31,Minas Gerais,Sudeste,2009,287443848
+31,Minas Gerais,Sudeste,2010,351123418
+31,Minas Gerais,Sudeste,2011,400124687
+31,Minas Gerais,Sudeste,2012,442282830
+31,Minas Gerais,Sudeste,2013,488004903
+31,Minas Gerais,Sudeste,2014,516633984
+31,Minas Gerais,Sudeste,2015,519331213
+31,Minas Gerais,Sudeste,2016,544810468
+31,Minas Gerais,Sudeste,2017,576375545
+31,Minas Gerais,Sudeste,2018,614875820
+31,Minas Gerais,Sudeste,2019,651872684
+31,Minas Gerais,Sudeste,2020,682786116
+31,Minas Gerais,Sudeste,2021,857593214
+31,Minas Gerais,Sudeste,2022,906730670
+31,Minas Gerais,Sudeste,2023,971977551
+32,Espírito Santo,Sudeste,2002,27048997
+32,Espírito Santo,Sudeste,2003,31519106
+32,Espírito Santo,Sudeste,2004,39732638
+32,Espírito Santo,Sudeste,2005,47020588
+32,Espírito Santo,Sudeste,2006,53463868
+32,Espírito Santo,Sudeste,2007,60658395
+32,Espírito Santo,Sudeste,2008,72091158
+32,Espírito Santo,Sudeste,2009,69215361
+32,Espírito Santo,Sudeste,2010,85310285
+32,Espírito Santo,Sudeste,2011,105976222
+32,Espírito Santo,Sudeste,2012,116850581
+32,Espírito Santo,Sudeste,2013,117274347
+32,Espírito Santo,Sudeste,2014,128783781
+32,Espírito Santo,Sudeste,2015,120365980
+32,Espírito Santo,Sudeste,2016,109264423
+32,Espírito Santo,Sudeste,2017,113399937
+32,Espírito Santo,Sudeste,2018,137020055
+32,Espírito Santo,Sudeste,2019,137345595
+32,Espírito Santo,Sudeste,2020,138445922
+32,Espírito Santo,Sudeste,2021,186336505
+32,Espírito Santo,Sudeste,2022,182548590
+32,Espírito Santo,Sudeste,2023,209829732
+33,Rio de Janeiro,Sudeste,2002,184310915
+33,Rio de Janeiro,Sudeste,2003,202640789
+33,Rio de Janeiro,Sudeste,2004,241206738
+33,Rio de Janeiro,Sudeste,2005,269830061
+33,Rio de Janeiro,Sudeste,2006,299738183
+33,Rio de Janeiro,Sudeste,2007,323698286
+33,Rio de Janeiro,Sudeste,2008,378285800
+33,Rio de Janeiro,Sudeste,2009,391650854
+33,Rio de Janeiro,Sudeste,2010,449858101
+33,Rio de Janeiro,Sudeste,2011,512767905
+33,Rio de Janeiro,Sudeste,2012,574884973
+33,Rio de Janeiro,Sudeste,2013,628226069
+33,Rio de Janeiro,Sudeste,2014,671076844
+33,Rio de Janeiro,Sudeste,2015,659138952
+33,Rio de Janeiro,Sudeste,2016,640401206
+33,Rio de Janeiro,Sudeste,2017,671605668
+33,Rio de Janeiro,Sudeste,2018,758859047
+33,Rio de Janeiro,Sudeste,2019,779927917
+33,Rio de Janeiro,Sudeste,2020,753823711
+33,Rio de Janeiro,Sudeste,2021,949300770
+33,Rio de Janeiro,Sudeste,2022,1153512155
+33,Rio de Janeiro,Sudeste,2023,1172871443
+35,São Paulo,Sudeste,2002,518878815
+35,São Paulo,Sudeste,2003,591454032
+35,São Paulo,Sudeste,2004,652955558
+35,São Paulo,Sudeste,2005,743042944
+35,São Paulo,Sudeste,2006,824529299
+35,São Paulo,Sudeste,2007,935653180
+35,São Paulo,Sudeste,2008,1042510168
+35,São Paulo,Sudeste,2009,1127093826
+35,São Paulo,Sudeste,2010,1294695988
+35,São Paulo,Sudeste,2011,1436672709
+35,São Paulo,Sudeste,2012,1559033444
+35,São Paulo,Sudeste,2013,1715238417
+35,São Paulo,Sudeste,2014,1858196055
+35,São Paulo,Sudeste,2015,1939901907
+35,São Paulo,Sudeste,2016,2038757382
+35,São Paulo,Sudeste,2017,2120761635
+35,São Paulo,Sudeste,2018,2210561949
+35,São Paulo,Sudeste,2019,2348338000
+35,São Paulo,Sudeste,2020,2377638980
+35,São Paulo,Sudeste,2021,2719751231
+35,São Paulo,Sudeste,2022,3130333203
+35,São Paulo,Sudeste,2023,3444814033
+41,Paraná,Sul,2002,88235715
+41,Paraná,Sul,2003,110039414
+41,Paraná,Sul,2004,123451530
+41,Paraná,Sul,2005,127464507
+41,Paraná,Sul,2006,137648311
+41,Paraná,Sul,2007,165208891
+41,Paraná,Sul,2008,185683859
+41,Paraná,Sul,2009,196675612
+41,Paraná,Sul,2010,225205255
+41,Paraná,Sul,2011,257122269
+41,Paraná,Sul,2012,285620202
+41,Paraná,Sul,2013,333481152
+41,Paraná,Sul,2014,348084191
+41,Paraná,Sul,2015,376962822
+41,Paraná,Sul,2016,401814164
+41,Paraná,Sul,2017,421497870
+41,Paraná,Sul,2018,440029403
+41,Paraná,Sul,2019,466377036
+41,Paraná,Sul,2020,487930594
+41,Paraná,Sul,2021,549973062
+41,Paraná,Sul,2022,614610848
+41,Paraná,Sul,2023,670919162
+42,Santa Catarina,Sul,2002,54481893
+42,Santa Catarina,Sul,2003,64098475
+42,Santa Catarina,Sul,2004,73618966
+42,Santa Catarina,Sul,2005,81549244
+42,Santa Catarina,Sul,2006,91063449
+42,Santa Catarina,Sul,2007,103728092
+42,Santa Catarina,Sul,2008,121477258
+42,Santa Catarina,Sul,2009,129098535
+42,Santa Catarina,Sul,2010,153726007
+42,Santa Catarina,Sul,2011,174068322
+42,Santa Catarina,Sul,2012,191794652
+42,Santa Catarina,Sul,2013,214512242
+42,Santa Catarina,Sul,2014,242553371
+42,Santa Catarina,Sul,2015,249079642
+42,Santa Catarina,Sul,2016,256754669
+42,Santa Catarina,Sul,2017,277270237
+42,Santa Catarina,Sul,2018,298227090
+42,Santa Catarina,Sul,2019,323263857
+42,Santa Catarina,Sul,2020,349275016
+42,Santa Catarina,Sul,2021,428570889
+42,Santa Catarina,Sul,2022,466274103
+42,Santa Catarina,Sul,2023,513392973
+43,Rio Grande do Sul,Sul,2002,98847211
+43,Rio Grande do Sul,Sul,2003,119325399
+43,Rio Grande do Sul,Sul,2004,131192206
+43,Rio Grande do Sul,Sul,2005,136362769
+43,Rio Grande do Sul,Sul,2006,147622599
+43,Rio Grande do Sul,Sul,2007,168009752
+43,Rio Grande do Sul,Sul,2008,190229822
+43,Rio Grande do Sul,Sul,2009,204344940
+43,Rio Grande do Sul,Sul,2010,241249164
+43,Rio Grande do Sul,Sul,2011,265056416
+43,Rio Grande do Sul,Sul,2012,287587019
+43,Rio Grande do Sul,Sul,2013,332292726
+43,Rio Grande do Sul,Sul,2014,357816424
+43,Rio Grande do Sul,Sul,2015,381992601
+43,Rio Grande do Sul,Sul,2016,408789528
+43,Rio Grande do Sul,Sul,2017,423270047
+43,Rio Grande do Sul,Sul,2018,457293958
+43,Rio Grande do Sul,Sul,2019,482464177
+43,Rio Grande do Sul,Sul,2020,470941846
+43,Rio Grande do Sul,Sul,2021,581283677
+43,Rio Grande do Sul,Sul,2022,593633656
+43,Rio Grande do Sul,Sul,2023,650107022
+50,Mato Grosso do Sul,Centro-Oeste,2002,16440424
+50,Mato Grosso do Sul,Centro-Oeste,2003,21846566
+50,Mato Grosso do Sul,Centro-Oeste,2004,23372308
+50,Mato Grosso do Sul,Centro-Oeste,2005,23725258
+50,Mato Grosso do Sul,Centro-Oeste,2006,26667894
+50,Mato Grosso do Sul,Centro-Oeste,2007,30084765
+50,Mato Grosso do Sul,Centro-Oeste,2008,36219263
+50,Mato Grosso do Sul,Centro-Oeste,2009,39517742
+50,Mato Grosso do Sul,Centro-Oeste,2010,47270656
+50,Mato Grosso do Sul,Centro-Oeste,2011,55133162
+50,Mato Grosso do Sul,Centro-Oeste,2012,62013201
+50,Mato Grosso do Sul,Centro-Oeste,2013,69203201
+50,Mato Grosso do Sul,Centro-Oeste,2014,78950133
+50,Mato Grosso do Sul,Centro-Oeste,2015,83082555
+50,Mato Grosso do Sul,Centro-Oeste,2016,91892285
+50,Mato Grosso do Sul,Centro-Oeste,2017,96396434
+50,Mato Grosso do Sul,Centro-Oeste,2018,106969142
+50,Mato Grosso do Sul,Centro-Oeste,2019,106943246
+50,Mato Grosso do Sul,Centro-Oeste,2020,122627726
+50,Mato Grosso do Sul,Centro-Oeste,2021,142203766
+50,Mato Grosso do Sul,Centro-Oeste,2022,166407329
+50,Mato Grosso do Sul,Centro-Oeste,2023,184402118
+51,Mato Grosso,Centro-Oeste,2002,19190653
+51,Mato Grosso,Centro-Oeste,2003,26697097
+51,Mato Grosso,Centro-Oeste,2004,33388670
+51,Mato Grosso,Centro-Oeste,2005,34257055
+51,Mato Grosso,Centro-Oeste,2006,30700165
+51,Mato Grosso,Centro-Oeste,2007,38027578
+51,Mato Grosso,Centro-Oeste,2008,49202505
+51,Mato Grosso,Centro-Oeste,2009,52693417
+51,Mato Grosso,Centro-Oeste,2010,56600955
+51,Mato Grosso,Centro-Oeste,2011,69153957
+51,Mato Grosso,Centro-Oeste,2012,79665691
+51,Mato Grosso,Centro-Oeste,2013,89212919
+51,Mato Grosso,Centro-Oeste,2014,101234520
+51,Mato Grosso,Centro-Oeste,2015,107418319
+51,Mato Grosso,Centro-Oeste,2016,123880296
+51,Mato Grosso,Centro-Oeste,2017,126845898
+51,Mato Grosso,Centro-Oeste,2018,137442853
+51,Mato Grosso,Centro-Oeste,2019,142122028
+51,Mato Grosso,Centro-Oeste,2020,178649564
+51,Mato Grosso,Centro-Oeste,2021,233390203
+51,Mato Grosso,Centro-Oeste,2022,255527297
+51,Mato Grosso,Centro-Oeste,2023,273008586
+52,Goiás,Centro-Oeste,2002,38629365
+52,Goiás,Centro-Oeste,2003,45557889
+52,Goiás,Centro-Oeste,2004,51103815
+52,Goiás,Centro-Oeste,2005,53865113
+52,Goiás,Centro-Oeste,2006,61375403
+52,Goiás,Centro-Oeste,2007,71410568
+52,Goiás,Centro-Oeste,2008,82417564
+52,Goiás,Centro-Oeste,2009,92865743
+52,Goiás,Centro-Oeste,2010,106770109
+52,Goiás,Centro-Oeste,2011,121296721
+52,Goiás,Centro-Oeste,2012,138757825
+52,Goiás,Centro-Oeste,2013,151300175
+52,Goiás,Centro-Oeste,2014,165015318
+52,Goiás,Centro-Oeste,2015,173632450
+52,Goiás,Centro-Oeste,2016,181759604
+52,Goiás,Centro-Oeste,2017,191948301
+52,Goiás,Centro-Oeste,2018,195681724
+52,Goiás,Centro-Oeste,2019,208672492
+52,Goiás,Centro-Oeste,2020,224126112
+52,Goiás,Centro-Oeste,2021,269627874
+52,Goiás,Centro-Oeste,2022,318586149
+52,Goiás,Centro-Oeste,2023,336746975
+53,Distrito Federal,Centro-Oeste,2002,53902200
+53,Distrito Federal,Centro-Oeste,2003,58456124
+53,Distrito Federal,Centro-Oeste,2004,67076505
+53,Distrito Federal,Centro-Oeste,2005,75732681
+53,Distrito Federal,Centro-Oeste,2006,84661406
+53,Distrito Federal,Centro-Oeste,2007,93404001
+53,Distrito Federal,Centro-Oeste,2008,110299557
+53,Distrito Federal,Centro-Oeste,2009,124323753
+53,Distrito Federal,Centro-Oeste,2010,144174102
+53,Distrito Federal,Centro-Oeste,2011,154568954
+53,Distrito Federal,Centro-Oeste,2012,164101336
+53,Distrito Federal,Centro-Oeste,2013,175906726
+53,Distrito Federal,Centro-Oeste,2014,197432059
+53,Distrito Federal,Centro-Oeste,2015,215612863
+53,Distrito Federal,Centro-Oeste,2016,235540045
+53,Distrito Federal,Centro-Oeste,2017,244722249
+53,Distrito Federal,Centro-Oeste,2018,254817205
+53,Distrito Federal,Centro-Oeste,2019,273613711
+53,Distrito Federal,Centro-Oeste,2020,265847334
+53,Distrito Federal,Centro-Oeste,2021,286943782
+53,Distrito Federal,Centro-Oeste,2022,328789563
+53,Distrito Federal,Centro-Oeste,2023,365669108

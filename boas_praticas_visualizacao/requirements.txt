@@ -1,0 +1,7 @@
+streamlit>=1.50   # st.plotly_chart(config=...); testado com 1.64
+pandas>=2.1
+plotly>=6.0       # px.scatter_map, Choroplethmap e cantos arredondados nas barras
+# Só para regenerar imagens e slides (o app Streamlit não precisa):
+python-pptx>=1.0  # gerar_slides.py
+playwright>=1.40  # gerar_imagens.py (usa o Edge; sem ele: playwright install chromium)
+Pillow>=10.0      # gerar_slides.py
